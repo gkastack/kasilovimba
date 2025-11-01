@@ -23,12 +23,21 @@ void destroy(int** mtx, size_t count)
     delete[] mtx;
 }
 
-void input(int** mtx, int init, size_t rows, size_t cols)
+void construct(int** mtx, int init, size_t rows, size_t cols)
 {
     for(int i = 0; i < rows; ++i)
     {
         for(int j = 0; j < cols; ++j)
             mtx[i][j] = init;
+    }
+}
+
+void input(int** mtx, size_t rows, size_t cols)
+{
+    for(int i = 0; i < rows; ++i)
+    {
+        for(int j = 0; j < cols; ++j)
+            std::cin >> mtx[i][j];
     }
 }
 
@@ -46,6 +55,7 @@ int main()
         std::cerr << e.what();
         return 1;
     }
-    input(mtx, 2, rows, cols);
+    construct(mtx, 2, rows, cols);
     destroy(matrix, rows);
+
 }
