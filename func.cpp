@@ -8,7 +8,7 @@ int** convert(const int* t, size_t n, const int* lns, size_t rows)
         result = new int*[rows];
         for (size_t i = 0; i < rows; i++)
             result[i] = new int[lns[i]];
-        int count = 0;
+        size_t count = 0;
         for (size_t i = 0; i < rows; i++)
         {
             for (size_t j = 0; j < lns[i] && count < n; j++, count++)
